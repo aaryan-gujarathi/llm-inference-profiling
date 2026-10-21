@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Sim build outputs
+sim/
+*.vvp
+*.vcd
+*.fst
+obj_dir/
+
+# Profiling outputs (large; commit summaries to docs/ instead)
+results/
+*.json.gz
+
+# Secrets — never commit
+.env
