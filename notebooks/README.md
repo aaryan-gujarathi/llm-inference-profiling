@@ -1,5 +1,7 @@
-Put your original Colab notebook here (e.g. `tinyllama_profiling.ipynb`).
+`tinyllama_profiling.ipynb` is the original Phase 1 Colab notebook (T4 runtime). It shows:
 
-Before committing:
-1. Remove any Hugging Face token or API key from every cell.
-2. Edit → Clear all outputs, then re-run only the cells whose plots/tables you want to keep.
+- the profiler run over `model.generate()` with `record_shapes=True`
+- why per-shape GEMM timing came back empty for bitsandbytes 4-bit kernels
+- the fallback that reads `(in_features, out_features)` straight from every `Linear4bit` layer
+
+[`profiling/profile_tinyllama.py`](../profiling/profile_tinyllama.py) is the cleaned-up, scriptable version of this notebook.
